@@ -1,0 +1,68 @@
+Status: FAILED
+Time Taken: 610
+Size: 428
+Timestamp: Fri Sep 25 09:07:10 IST 2020
+TestStep: CatalogProductSaveRequest
+
+----------------- Messages ------------------------------
+[SOAP Response] error: Unexpected element: CDATA
+[SOAP Response] Unexpected element: CDATA
+
+----------------- Properties ------------------------------
+Endpoint: http://soap.upskills.in/soap/default?services=catalogProductRepositoryV1
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: Authorization : Bearer f0rf13pxtxp7mftwc23rq6e52yvmi5um
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Host : soap.upskills.in
+Accept-Encoding : gzip,deflate
+Content-Length : 640
+Content-Type : application/soap+xml;charset=UTF-8;action="catalogProductRepositoryV1Save"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:def="http://soap.upskills.in/soap/default?services=catalogProductRepositoryV1">
+   \r
+   <soap:Header/>
+   \r
+   <soap:Body>
+      \r
+      <def:catalogProductRepositoryV1SaveRequest>
+         \r
+         <product>
+            \r
+            <!--sku should be unique for each request-->
+            <sku>?</sku>
+            <name>?</name>
+            <!--default value is 4-->
+            <attributeSetId>4</attributeSetId>
+            <price>?</price>
+            <!--for typeid refer catalogProductTypeListV1 WSDL service (TC_007)-->
+            <typeId>simple</typeId>
+         </product>
+         \r
+      </def:catalogProductRepositoryV1SaveRequest>
+      \r
+   </soap:Body>
+   \r
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-UA-Compatible : IE=edge
+Cache-Control : no-store, no-cache, must-revalidate
+Server : LiteSpeed
+Connection : Keep-Alive
+Set-Cookie : PHPSESSID=1df72e76788cd69dd0485eff7aba455c; expires=Fri, 25-Sep-2020 04:37:23 GMT; Max-Age=3600; path=/; domain=soap.upskills.in; HttpOnly
+Expires : Thu, 19 Nov 1981 08:52:00 GMT
+Pragma : no-cache
+#status# : HTTP/1.1 500 Internal Server Error
+Content-Length : 428
+Date : Fri, 25 Sep 2020 03:37:23 GMT
+X-Powered-By : PHP/7.2.32
+Content-Type : application/json; charset=UTF-8
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"><env:Body><env:Fault><env:Code><env:Value>env:Receiver</env:Value></env:Code><env:Reason><env:Text>SOAP-ERROR: Encoding: Violation of encoding rules</env:Text></env:Reason></env:Fault></env:Body></env:Envelope>
+{"messages":{"error":[{"code":500,"message":"Server internal error. See details in report api\/917375889956"}]}}
